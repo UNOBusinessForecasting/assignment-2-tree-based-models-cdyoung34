@@ -34,7 +34,7 @@ x = df.drop(features_to_exclude, axis=1)
 
 # %%
 # Create the model and fit it using the train data
-model = RF(n_estimators=100, n_jobs=-1, max_depth=30)
+model = RF(n_estimators=100, n_jobs=-1, max_depth=70)
 modelFit = model.fit(x, y)
 
 # %% [markdown]
