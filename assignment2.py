@@ -1,6 +1,7 @@
 # %% [markdown]
 # ### Imports
 
+import numpy as np
 # %%
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier as RF
@@ -33,7 +34,7 @@ x = df.drop(features_to_exclude, axis=1)
 
 # %%
 # Create the model and fit it using the train data
-model = RF(n_estimators=100, n_jobs=-1, max_depth=5)
+model = RF(n_estimators=100, n_jobs=-1, max_depth=30)
 modelFit = model.fit(x, y)
 
 # %% [markdown]
@@ -45,5 +46,6 @@ xt = test_data.drop(features_to_exclude, axis=1)
 
 # %%
 pred = modelFit.predict(xt)
+np.unique(pred)
 
 
